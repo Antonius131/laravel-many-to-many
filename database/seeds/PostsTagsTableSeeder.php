@@ -14,7 +14,6 @@ class PostsTagsTableSeeder extends Seeder
     public function run()
     {
         $posts = Post::all();
-        $tags = Tag::all();
 
         foreach ($posts as $post) {
             $randomTags = Tag::inRandomOrder()->limit(4)->get();
