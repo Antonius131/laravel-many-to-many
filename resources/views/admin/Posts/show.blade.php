@@ -6,9 +6,14 @@
       <div class="col-8 offset-2">
          <div class="row">
             <div class="col-12">
-               <h6>{{ $post->user->name }}</h6>
+               <h6>Author: {{ $post->user->name }}</h6>
                <h1>{{ $post->title }}</h1>
                <small>{{ $post->date }}</small>
+               <p class="mt-2">
+                  @foreach ( $post->tags as $tag)
+                     #{{ $tag->tag_name }} &nbsp
+                  @endforeach
+               </p>
             </div>
          </div>
          <div class="row mt-4">
