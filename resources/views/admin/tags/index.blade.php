@@ -20,7 +20,7 @@
                         {{ $tag->id }}
                      </td>
                      <td>
-                        {{ $tag->tag_name }}
+                        <a href="{{ route('admin.tags.show') }}">{{ $tag->tag_name }}</a>
                      </td>
                      <td>
                         <a href="{{ route('admin.tags.edit', $tag->id) }}" class="btn btn-outline-primary">Edit</a>
