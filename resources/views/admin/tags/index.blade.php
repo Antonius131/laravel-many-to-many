@@ -3,12 +3,14 @@
 @section('content')
 <div class="container">
    <div class="row py-5">
-      <div class="col-10 offset-1">
+      <div class="col-6 offset-3">
          <table class="table table-hover">
             <thead>
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -21,10 +23,10 @@
                         {{ $tag->tag_name }}
                      </td>
                      <td>
-                        <a href="{{ route('admin.tags.edit', $post->id) }}" class="btn btn-outline-primary">Edit</a>
+                        <a href="{{ route('admin.tags.edit', $tag->id) }}" class="btn btn-outline-primary">Edit</a>
                      </td>
                      <td>
-                        <form action="{{ route('admin.tags.destroy', $post->id) }}" method="POST">
+                        <form action="{{ route('admin.tags.destroy', $tag->id) }}" method="POST">
                            @csrf
                            @method('DELETE')
          
@@ -37,6 +39,7 @@
                @endforelse
             </tbody>
           </table>
+          {{ $tags->links() }}
       </div>
    </div>
 </div>
