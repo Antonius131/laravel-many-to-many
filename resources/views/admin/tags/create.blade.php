@@ -6,7 +6,8 @@
          <div class="col-8 offset-2">
             <form action="{{ route('admin.tags.store') }}" method="POST">
                @csrf
-               @include('admin.Posts.includes.form')
+               @include('admin.tags.includes.form')
+               
                <button type="submit" class="btn btn-primary">Create Tag</button>
             </form>
          </div>
