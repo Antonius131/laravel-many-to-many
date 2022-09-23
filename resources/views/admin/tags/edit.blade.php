@@ -6,7 +6,7 @@
          <div class="col-8 offset-2">
             <form action="{{ route('admin.tags.update', $tags->id) }}" method="POST">
                @csrf
-               @method('PUT')
+               @method('PATCH')
                @include('admin.tags.includes.form')
                <button type="submit" class="btn btn-primary">Edit tag</button>
             </form>
