@@ -15,17 +15,22 @@
    <input type="text" name="title" class="form-control" id="input-title"
    value="{{ request()->routeIs('admin.posts.edit') ? $post->title : '' }}">
 </div>
+
 <div class="mb-3 form-group">
    <label for="input-tags" >Tags</label>
    @foreach ($tags as $tag)   
       <div class="form-check">
-         <input type="checkbox" class="form-check-input" id="input-tags" value="{{ $tag->id }}">
+         <input 
+            type="checkbox"
+            name="tags[]"
+            class="form-check-input"
+            id="input-tags"
+            value="{{ $tag->id }}"
+            {{ $post->tags->contains($tag) ? 'checked' : '' }}>
          <label class="form-check-label" for="input-tags">{{ $tag->tag_name }}</label>
       </div>
    @endforeach
 </div>
-
-
 
 <div class="mb-3">
    <label class="form-label" for="create-textarea">Post text</label>
