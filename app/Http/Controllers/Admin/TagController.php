@@ -40,7 +40,13 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newTag = new Tag();
+        $newTag->tag_name = $data['tag_name'];
+        $newTag->save();
+
+        return redirect()->route('admin.tags.show', $newTag->id);
     }
 
     /**
