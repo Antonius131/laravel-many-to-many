@@ -6,19 +6,12 @@
       <div class="col-8 offset-2">
          <div class="row">
             <div class="col-12">
-               <h6>Author: {{ $post->user->name }}</h6>
-               <h1>{{ $post->title }}</h1>
-               <small>{{ $post->date }}</small>
-               <p class="mt-2">
-                  @foreach ( $post->tags as $tag)
-                     #{{ $tag->tag_name }} &nbsp
+               <h3>Tag: {{ $tag->tag_name }}</h3>
+               {{-- <p class="mt-2">
+                  @foreach ( $post as $post)
+                     {{ $tag->tag_name }}
                   @endforeach
-               </p>
-            </div>
-         </div>
-         <div class="row mt-4">
-            <div class="col-12">
-               <p>{{ $post->article_text }}</p>
+               </p> --}}
             </div>
          </div>
       </div>
