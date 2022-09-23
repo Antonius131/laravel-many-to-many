@@ -81,7 +81,13 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        
+        $oldTag = Tag::findOrFail($id);
+        $oldTag->tag_name = $data['tag_name'];
+        $oldTag->save();
+
+        return redirect()->route('admin.tags.show', $oldTag->id);
     }
 
     /**
