@@ -15,6 +15,12 @@
    <input type="text" name="title" class="form-control" id="input-title"
    value="{{ request()->routeIs('admin.posts.edit') ? $post->title : '' }}">
 </div>
+<div class="mb-3">
+   <label for="input-image" class="form-label">Post image</label>
+   <input type="file" name="post_image" class="form-control" id="input-image">
+</div>
+
+
 
 <div class="mb-3 form-group">
    <label for="input-tags" >Tags</label>
@@ -26,7 +32,7 @@
             class="form-check-input"
             id="input-tags"
             value="{{ $tag->id }}"
-            {{ $post->tags->contains($tag) ? 'checked' : '' }}>
+            {{-- {{ $post->tags->contains($tag) ? 'checked' : '' }}--}}> 
          <label class="form-check-label" for="input-tags">{{ $tag->tag_name }}</label>
       </div>
    @endforeach
