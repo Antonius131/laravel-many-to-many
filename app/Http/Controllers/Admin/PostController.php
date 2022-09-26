@@ -9,6 +9,7 @@ use App\Models\User;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -46,7 +47,9 @@ class PostController extends Controller
         $data = $request->all();
 
         $data['date'] = new DateTime();
+        $data['post_image'] = Storage::put('uploads', $data['post_image']);
         $data['user_id'] = Auth::user()->id;
+
         Post::create($data);
 
         return redirect()->route('admin.posts.index');
