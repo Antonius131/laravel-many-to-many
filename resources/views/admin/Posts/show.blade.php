@@ -8,7 +8,8 @@
             <div class="col-12">
                <h6>Author: {{ $post->user->name }}</h6>
                <h1>{{ $post->title }}</h1>
-               <small>{{ $post->date }}</small>
+               <img src="{{ $post->post_image }}" class="img-fluid w-100 mb-2" alt="{{ $post->title }}">
+               <small>Date: {{ $post->date }}</small>
                <p class="mt-2">
                   @foreach ( $post->tags as $tag)
                      #{{ $tag->tag_name }} &nbsp
