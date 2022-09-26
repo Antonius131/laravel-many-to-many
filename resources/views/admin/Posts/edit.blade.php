@@ -4,7 +4,7 @@
    <div class="container">
       <div class="row py-5">
          <div class="col-8 offset-2">
-            <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
+            <form action="{{ route('admin.posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
                @csrf
                @method('PUT')
                @include('admin.Posts.includes.form')
