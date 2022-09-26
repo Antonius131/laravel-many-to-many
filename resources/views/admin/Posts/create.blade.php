@@ -6,7 +6,7 @@
          <div class="col-8 offset-2">
             <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
                @csrf
-               @include('admin.Posts.includes.form')
+               @include('admin.posts.includes.form')
                <button type="submit" class="btn btn-primary">Create post</button>
             </form>
          </div>
