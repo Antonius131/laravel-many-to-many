@@ -32,7 +32,10 @@
             class="form-check-input"
             id="input-tags"
             value="{{ $tag->id }}"
-            {{-- {{ $post->tags->contains($tag) ? 'checked' : '' }}--}}> 
+            @if (isset($post))    
+            {{ $post->tags->contains($tag) ? 'checked' : '' }}
+            @endif
+         >
          <label class="form-check-label" for="input-tags">{{ $tag->tag_name }}</label>
       </div>
    @endforeach
